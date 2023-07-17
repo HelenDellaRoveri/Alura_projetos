@@ -1,0 +1,82 @@
+<meta charset="UTF-8"> <!-- para descobrir qual o erro de sintaxe no F12 "console"-- >
+
+<input/> <!-- para  criar uma barrinha para escrever na pag-->
+<button>Compare com o meu segredo</button> <!--para criar o botão para a pessoa clicar depois que inseriu a sua resposta-->
+
+<script>
+    function sorteia() { // descofio que essa parte tu já saiba
+
+       return Math.round(Math.random() * 10);
+
+    }
+
+    function sorteiaNumeros(quantidade) {
+
+        var segredos = [];
+
+        var numero = 1;
+
+        while(numero <= quantidade) { // para fazer repetições infinitas ou até uma determinação;
+
+
+              var numeroAleatorio = sorteia(); // uma var normal
+              var achou = false;
+
+              if (numeroAleatorio !== 0) {
+                     for(var posicao = 0; posicao < segredos.length; posicao++) { //str.length Essa propriedade retorna o número de unidades de código presentes na string. ++ é usado para continuar
+
+                           if(segredos[posicao] == numeroAleatorio){
+                                achou = true; // para ver se o npumero que a pessoa digitou é o mesmo sorteado
+                                break;
+                           }
+
+                     }
+
+                     if (achou == false) {
+                           segredos.push(numeroAleatorio); // continuação
+                           numero++;
+                     }
+              }
+
+        }
+
+        return segredos; // não lembro
+
+    }
+
+    var segredos = sorteiaNumeros(3); //número escolhido para ser o correto
+
+    console.log(segredos); // para aparecer no F12 console o npumero
+
+    var input = document.querySelector("input");
+    input.focus(); //parte do comendo para cria toda a parte de cria uma barrinha para permitir o usuario escrever e clicar no botão
+
+    function verifica() {
+
+       var achou = false;
+
+       for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+              if(input.value == segredos[posicao]) {
+
+                     alert("Você ACERTOU!");
+                     achou = true;
+                     break;
+              } 
+       }
+
+       if(achou == false) {
+
+              alert("Você ERROU!");
+       }
+
+       input.value = "";
+       input.focus(); // para deixar o espaço de escrever pronto para a pessoa escrever
+
+    }
+
+    var button = document.querySelector("button"); // continuidade da sequência da tag par criar os biricuteco
+
+    button.onclick = verifica; // para ver se o número digitado está correto
+
+</script>

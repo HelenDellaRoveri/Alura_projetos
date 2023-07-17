@@ -1,0 +1,20 @@
+<canvas  width ="600" height ="400"></canvas>
+
+<script>
+	
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext("2d");
+
+	//parte 1 da bandeira
+	pincel.fillStyle = "white";
+	pincel.fillRect(0, 0, 600, 400);
+
+	//parte 2 da bandeira
+	pincel.fillStyle = "green";
+	pincel.fillRect(0, 0, 200, 400);
+
+	//parte 3 da bandeira
+	pincel.fillStyle = "red";
+	pincel.fillRect(400, 0, 200, 400);	
+
+</script>

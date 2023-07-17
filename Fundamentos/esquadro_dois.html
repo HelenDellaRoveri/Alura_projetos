@@ -1,0 +1,34 @@
+<!--esquedro_dois.html -->
+
+<meta charset = "UTF-8">
+<canvas width = "600" heigth = "400" ></canvas>
+
+<script>
+	
+
+	var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+	function desenhaEsquadro (Xa, Ya, Xc, Yc, cor){
+
+	
+	pincel.fillStyle = cor;
+    pincel.beginPath();
+    pincel.moveTo(Xa, Ya);
+    pincel.lineTo(Xa, Yc);
+    pincel.lineTo(Xc, Yc);
+    pincel.fill();
+
+    pincel.fillStyle="white";
+    pincel.beginPath();
+    pincel.moveTo( (6 * Xa + Xc ) / 7, (9 * Ya + 5 * Yc) / 14 );
+    pincel.lineTo( (6 * Xa + Xc ) / 7, (Ya + 6 * Yc) / 7 );
+    pincel.lineTo( (5 * Xa + 9 * Xc ) / 14, (Ya + 6 * Yc) / 7 );
+    pincel.fill();
+
+	}
+
+	desenhaEsquadro(50, 50, 400, 400, "black");
+    
+
+</script>

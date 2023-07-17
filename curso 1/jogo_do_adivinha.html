@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+
+<html>
+
+<head> <h2>JOGO DO ADIVINHA</h2> </head>
+
+	<body>
+		
+		<h3></h3>
+		<br>
+		<br>
+
+
+		<script>
+
+   	 		function pulaLinha() {
+
+        		document.write("<br>");
+				document.write("<br>");
+}
+
+			function mostra(frase) {
+
+        		document.write(frase);
+        		pulaLinha();
+}
+			var numeroPensado = Math.round(Math.random() * 10);
+				console.log(numeroPensado);
+			var chute = parseInt ( prompt("digite seu chute!") );
+
+			if(chute == numeroPensado) {
+    			mostra("Você acertou!");
+    		 } else {
+    			mostra("Você errou, o número pensado foi " + numeroPensado);
+    		}
+
+
+		</script>
+
+
+	</body>
+
+</html>
